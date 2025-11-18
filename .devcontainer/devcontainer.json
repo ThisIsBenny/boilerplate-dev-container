@@ -2,17 +2,25 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node",
   "features": {
     "ghcr.io/jsburckhardt/devcontainer-features/bat:1": {},
-    "ghcr.io/devcontainers/features/node:1": {}
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "username": "node",
+      "userUid": "1000",
+      "userGid": "1000",
+      "upgradePackages": true,
+      "nonFreePackages": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": false
+    }
   },
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "terminal.integrated.profiles.linux": {
-          "zsh": {
-            "path": "zsh"
-          }
-        }
       },
       "extensions": [
         "streetsidesoftware.code-spell-checker",
@@ -30,5 +38,20 @@
       ]
     }
   },
-  "forwardPorts": [3000]
+  
+  "forwardPorts": [3000],
+
+  // Use 'portsAttributes' to set default properties for specific forwarded ports. More info: https://code.visualstudio.com/docs/remote/devcontainerjson-reference.
+  "portsAttributes": {
+    "8000": {
+      "label": "Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+
+  "postCreateCommand": "sudo chmod a+x ./.devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh"
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
