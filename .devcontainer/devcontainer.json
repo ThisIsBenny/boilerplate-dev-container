@@ -1,0 +1,34 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "features": {
+    "ghcr.io/jsburckhardt/devcontainer-features/bat:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "zsh"
+          }
+        }
+      },
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint",
+        "donjayamanne.githistory",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-close-tag",
+        "yoavbls.pretty-ts-errors",
+        "christian-kohler.path-intellisense",
+        "redhat.vscode-yaml",
+        "tombonnike.vscode-status-bar-format-toggle",
+        "editorconfig.editorconfig"
+      ]
+    }
+  },
+  "forwardPorts": [3000]
+}
