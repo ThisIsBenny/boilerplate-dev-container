@@ -1,3 +1,5 @@
+
+# Install npm dependencies
 if [ -f "package.json" ]; then
     if [ -f "package-lock.json" ] || [ -f "npm-shrinkwrap.json" ]; then
         echo "Running npm ci"

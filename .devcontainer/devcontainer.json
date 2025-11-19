@@ -38,6 +38,12 @@
       ]
     }
   },
+
+
+  "mounts": [
+    // Comment line below if only .gitconfig is used and not .gitconfig.local. .gitconfig is added to container via dotfile reposiotry (https://code.visualstudio.com/docs/devcontainers/containers#_personalizing-with-dotfile-repositories)
+    "source=${env:HOME}/.gitconfig.local,target=/home/node/.gitconfig.local,type=bind,consistency=cached"
+  ],
   
   "forwardPorts": [3000],
 
